@@ -7,10 +7,16 @@ data class CarRequest(
     val brand: String,
     val model: String,
     val chassi: String,
+    val licensePlate: String,
+    val yearManufacture: String,
+    val yearModel: String,
 )
 
 fun CarRequest.toCar() = Car(
     brand = this.brand,
     model = this.model,
     chassi = this.chassi,
+    licensePlate = this.licensePlate,
+    yearManufacture = this.yearManufacture,
+    yearModel = this.yearModel,
 )
