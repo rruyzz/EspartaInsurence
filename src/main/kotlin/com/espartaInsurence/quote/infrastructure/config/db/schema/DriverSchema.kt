@@ -1,7 +1,6 @@
 package com.espartaInsurence.quote.infrastructure.config.db.schema
 
-import com.espartaInsurence.quote.entity.model.Driver
-import com.espartaInsurence.quote.entity.model.InsuredData
+import com.espartaInsurence.quote.entity.model.DriverDto
 import jakarta.persistence.*
 
 @Entity(name = "driverData")
@@ -14,7 +13,7 @@ data class DriverSchema(
     val dataOfBirth: String,
 )
 
-fun DriverSchema.toDriver() = Driver(
+fun DriverSchema.toDriver() = DriverDto(
     name = this.name,
     document = this.document,
     dataOfBirth = this.dataOfBirth,

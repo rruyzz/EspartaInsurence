@@ -1,6 +1,6 @@
 package com.espartaInsurence.quote.infrastructure.config.db.schema
 
-import com.espartaInsurence.quote.entity.model.InsuredData
+import com.espartaInsurence.quote.entity.model.InsuredDataDto
 import jakarta.persistence.*
 
 @Entity(name = "insuredData")
@@ -23,11 +23,11 @@ data class InsuredDataSchema(
     val insuredAddress: InsuredAddressSchema
 )
 
-fun InsuredDataSchema.toInsuredData() = InsuredData(
+fun InsuredDataSchema.toInsuredData() = InsuredDataDto(
     insuredName = this.insuredName,
     document = this.document,
     email = this.email,
     phone = this.phone,
     dataOfBirth = this.dataOfBirth,
-    insuredAddress = this.insuredAddress.toInsuredAddress(),
+    insuredAddressDto = this.insuredAddress.toInsuredAddress(),
 )

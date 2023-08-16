@@ -2,7 +2,7 @@ package com.espartaInsurence.quote.entity.model
 
 import com.espartaInsurence.quote.infrastructure.config.db.schema.CarSchema
 
-data class Car(
+data class CarDto(
     val brand: String,
     val model: String,
     val chassi: String,
@@ -11,7 +11,7 @@ data class Car(
     val yearModel: String,
 )
 
-fun Car.toCarSchema() = CarSchema(
+fun CarDto.toCarSchema() = CarSchema(
     brand = this.brand,
     model = this.model,
     chassi = this.chassi,

@@ -1,6 +1,6 @@
 package com.espartaInsurence.quote.infrastructure.quote.request
 
-import com.espartaInsurence.quote.entity.model.Driver
+import com.espartaInsurence.quote.entity.model.DriverDto
 
 data class DriverRequest(
     val name: String,
@@ -8,7 +8,7 @@ data class DriverRequest(
     val dataOfBirth: String,
 )
 
-fun DriverRequest.toDriver() = Driver(
+fun DriverRequest.toDriverDto() = DriverDto(
     name = this.name,
     document = this.document,
     dataOfBirth = this.dataOfBirth,

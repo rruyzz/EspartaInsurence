@@ -1,6 +1,6 @@
 package com.espartaInsurence.quote.infrastructure.quote.request
 
-import com.espartaInsurence.quote.entity.model.InsuredAddress
+import com.espartaInsurence.quote.entity.model.InsuredAddressDto
 
 data class InsuredAddressRequest(
     val zip: String,
@@ -10,7 +10,7 @@ data class InsuredAddressRequest(
     val complement: String,
 )
 
-fun InsuredAddressRequest.toInsuredAddress() = InsuredAddress(
+fun InsuredAddressRequest.toInsuredAddressDto() = InsuredAddressDto(
     zip = this.zip,
     street = this.street,
     neighborhood = this.neighborhood,

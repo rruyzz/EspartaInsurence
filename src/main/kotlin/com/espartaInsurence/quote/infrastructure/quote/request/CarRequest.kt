@@ -1,7 +1,6 @@
 package com.espartaInsurence.quote.infrastructure.quote.request
 
-import com.espartaInsurence.quote.entity.model.Car
-import com.espartaInsurence.quote.entity.model.Quote
+import com.espartaInsurence.quote.entity.model.CarDto
 
 data class CarRequest(
     val brand: String,
@@ -12,7 +11,7 @@ data class CarRequest(
     val yearModel: String,
 )
 
-fun CarRequest.toCar() = Car(
+fun CarRequest.toCarDto() = CarDto(
     brand = this.brand,
     model = this.model,
     chassi = this.chassi,

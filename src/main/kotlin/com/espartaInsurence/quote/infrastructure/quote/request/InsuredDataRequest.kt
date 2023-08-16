@@ -1,7 +1,6 @@
 package com.espartaInsurence.quote.infrastructure.quote.request
 
-import com.espartaInsurence.quote.entity.model.Car
-import com.espartaInsurence.quote.entity.model.InsuredData
+import com.espartaInsurence.quote.entity.model.InsuredDataDto
 
 data class InsuredDataRequest(
     val insuredName: String,
@@ -12,11 +11,11 @@ data class InsuredDataRequest(
     val insuredAddress: InsuredAddressRequest
 )
 
-fun InsuredDataRequest.toInsurenceData() = InsuredData(
+fun InsuredDataRequest.toInsurenceDataDto() = InsuredDataDto(
     insuredName = this.insuredName,
     document = this.document,
     email = this.email,
     phone = this.phone,
     dataOfBirth = this.dataOfBirth,
-    insuredAddress = this.insuredAddress.toInsuredAddress(),
+    insuredAddressDto = this.insuredAddress.toInsuredAddressDto(),
 )

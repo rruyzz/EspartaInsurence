@@ -1,9 +1,6 @@
 package com.espartaInsurence.quote.infrastructure.quote.controller
 
-import com.espartaInsurence.quote.entity.model.Quote
-import com.espartaInsurence.quote.infrastructure.quote.request.QuoteRequest
-import com.espartaInsurence.quote.infrastructure.quote.request.toQuote
-import com.espartaInsurence.quote.usecase.CreateQuoteUseCase
+import com.espartaInsurence.quote.entity.model.QuoteDto
 import com.espartaInsurence.quote.usecase.GetQuoteUseCase
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.*
@@ -16,7 +13,7 @@ class GetQuoteController (
 
     @GetMapping
     @ResponseStatus(HttpStatus.CREATED)
-    fun get(): Quote {
+    fun get(): QuoteDto {
         return getQuoteUseCase()
     }
 }

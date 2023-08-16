@@ -1,6 +1,6 @@
 package com.espartaInsurence.quote.infrastructure.quote.request
 
-import com.espartaInsurence.quote.entity.model.Quote
+import com.espartaInsurence.quote.entity.model.QuoteDto
 
 data class QuoteRequest(
     val id: Int? = null,
@@ -17,11 +17,11 @@ data class QuoteRequest(
     val carUse: Int,
 )
 
-fun QuoteRequest.toQuote() = Quote(
+fun QuoteRequest.toQuoteDto() = QuoteDto(
     id = this.id,
-    insuredData = this.insuredData.toInsurenceData(),
-    car = this.car.toCar(),
-    driver = this.driver.toDriver(),
+    insuredDataDto = this.insuredData.toInsurenceDataDto(),
+    car = this.car.toCarDto(),
+    driverDto = this.driver.toDriverDto(),
     isRenovation = this.isRenovation,
     insurerRenovation = this.insurerRenovation,
     bonus = this.bonus,

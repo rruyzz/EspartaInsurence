@@ -2,11 +2,11 @@ package com.espartaInsurence.quote.entity.model
 
 import com.espartaInsurence.quote.infrastructure.config.db.schema.QuoteSchema
 
-data class Quote(
+data class QuoteDto(
     val id: Int? = null,
-    val insuredData: InsuredData,
-    val car: Car,
-    val driver: Driver,
+    val insuredDataDto: InsuredDataDto,
+    val car: CarDto,
+    val driverDto: DriverDto,
     val isRenovation: Boolean,
     val insurerRenovation: String,
     val bonus: Int,
@@ -17,11 +17,11 @@ data class Quote(
     val carUse: Int,
 )
 
-fun Quote.toQuoteSchema() = QuoteSchema(
+fun QuoteDto.toQuoteSchema() = QuoteSchema(
     id = this.id,
-    insuredData = this.insuredData.toInsuredDataSchema(),
+    insuredData = this.insuredDataDto.toInsuredDataSchema(),
     car = this.car.toCarSchema(),
-    driver = driver.toDriverSchema(),
+    driver = driverDto.toDriverSchema(),
     isRenovation = this.isRenovation,
     insurerRenovation = this.insurerRenovation,
     bonus = this.bonus,

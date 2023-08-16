@@ -1,6 +1,6 @@
 package com.espartaInsurence.quote.infrastructure.config.db.schema
 
-import com.espartaInsurence.quote.entity.model.InsuredAddress
+import com.espartaInsurence.quote.entity.model.InsuredAddressDto
 import jakarta.persistence.*
 
 @Entity(name = "insuredAddress")
@@ -21,7 +21,7 @@ data class InsuredAddressSchema(
 )
 
 
-fun InsuredAddressSchema.toInsuredAddress() = InsuredAddress(
+fun InsuredAddressSchema.toInsuredAddress() = InsuredAddressDto(
     id = this.id,
     zip = this.zip,
     street = this.street,

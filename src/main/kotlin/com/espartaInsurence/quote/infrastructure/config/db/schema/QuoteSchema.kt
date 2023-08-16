@@ -1,9 +1,6 @@
 package com.espartaInsurence.quote.infrastructure.config.db.schema
 
-import com.espartaInsurence.quote.entity.model.Quote
-import com.espartaInsurence.quote.entity.model.toCarSchema
-import com.espartaInsurence.quote.entity.model.toDriverSchema
-import com.espartaInsurence.quote.entity.model.toInsuredDataSchema
+import com.espartaInsurence.quote.entity.model.QuoteDto
 import jakarta.persistence.*
 
 @Entity(name = "quoteData")
@@ -38,11 +35,11 @@ data class QuoteSchema(
     val carUse: Int,
 )
 
-fun QuoteSchema.toQuote() = Quote(
+fun QuoteSchema.toQuote() = QuoteDto(
     id = this.id,
-    insuredData = this.insuredData.toInsuredData(),
+    insuredDataDto = this.insuredData.toInsuredData(),
     car = this.car.toCar(),
-    driver = driver.toDriver(),
+    driverDto = driver.toDriver(),
     isRenovation = this.isRenovation,
     insurerRenovation = this.insurerRenovation,
     bonus = this.bonus,

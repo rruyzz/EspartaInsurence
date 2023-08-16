@@ -1,12 +1,12 @@
 package com.espartaInsurence.quote.entity.gateway
 
-import com.espartaInsurence.quote.entity.model.Quote
+import com.espartaInsurence.quote.entity.model.QuoteDto
 
 interface QuoteGateway {
-    fun create(quote: Quote)
-    fun get(): Quote
-    fun update(quote: Quote)
+    fun create(quoteDto: QuoteDto)
+    fun get(): QuoteDto
+    fun update(quoteDto: QuoteDto)
     fun delete(id: Int)
-    fun findById(id: Int): Quote
-    fun searchByName(nameFragment: String?): List<Quote>
+    fun findById(id: Int): QuoteDto
+    fun searchByName(nameFragment: String?): List<QuoteDto>
 }

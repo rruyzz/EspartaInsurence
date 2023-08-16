@@ -2,7 +2,7 @@ package com.espartaInsurence.quote.entity.model
 
 import com.espartaInsurence.quote.infrastructure.config.db.schema.InsuredAddressSchema
 
-data class InsuredAddress(
+data class InsuredAddressDto(
     val id: Int? = null,
     val zip: String,
     val street: String,
@@ -12,7 +12,7 @@ data class InsuredAddress(
 )
 
 
-fun InsuredAddress.toInsuredAddressSchema() = InsuredAddressSchema(
+fun InsuredAddressDto.toInsuredAddressSchema() = InsuredAddressSchema(
     id = this.id,
     zip = this.zip,
     street = this.street,
